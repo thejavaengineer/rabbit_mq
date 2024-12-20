@@ -10,8 +10,9 @@ public class RabbitMqConsumer {
     private static final String QUEUE_NAME = "longMessageQueue";
 
     public static void main(String[] args) {
+        // Connect to RabbitMQ running locally
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost"); // Connect to RabbitMQ running locally
+        factory.setHost("localhost");
 
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
